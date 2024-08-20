@@ -1,21 +1,11 @@
-import Tempo from "./Tempo"
 import SheetMusic from "./SheetMusic"
 import Compass from "./Compass"
-import Note from "./Note"
 import { useState } from "react"
+import { getCompasses } from "../utils/getCompasses"
 
 
 function Sheet() {
-    const [ compasses, setCompasses] = useState([
-       0,
-       0,
-       0,
-       0,
-       0,
-       0,
-       0,
-       0
-    ])
+    const [ compasses, setCompasses] = useState(getCompasses())
     
 
     return (
@@ -26,6 +16,7 @@ function Sheet() {
                     return <Compass
                         key={index}
                         index={index}
+                        notes={value?.notes}
                     />
                 })
             }

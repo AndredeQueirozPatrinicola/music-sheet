@@ -99,6 +99,30 @@ export function getCompasses(){
                 },
             ]
         },
+        {
+            notes: [
+                {
+                    name: 'Semínima',
+                    value: 1,
+                    rithm: 0.25
+                },
+                {
+                    name: 'Semínima',
+                    value: 1,
+                    rithm: 0.25
+                },
+                {
+                    name: 'Semínima',
+                    value: 1,
+                    rithm: 0.25
+                },
+                {
+                    name: 'Semínima',
+                    value: 1,
+                    rithm: 0.25
+                },
+            ]
+        },
         
     ]
 }
