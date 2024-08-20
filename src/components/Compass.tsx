@@ -2,10 +2,8 @@ import Line from "./Line";
 import Clef from "./Clef";
 import Tempo from "./Tempo";
 
-
 type CompassContract = {
-    index: number,
-    notes: any
+    index: number;
 }
 
 function Compass({index}: CompassContract) {

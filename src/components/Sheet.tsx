@@ -1,62 +1,32 @@
-
+import Tempo from "./Tempo"
 import SheetMusic from "./SheetMusic"
-import SheetLine from "./SheetLine"
 import Compass from "./Compass"
+import Note from "./Note"
 import { useState } from "react"
-import { getCompasses } from "../utils/getCompasses"
 
-type Notes = {
-    name: string,
-    value: number,
-    rithm: number
-}
-
-type ICompass = {
-    notes: Notes[]
-}
-
-type Music = {
-    name: string,
-    tempo: number[],
-    compasses: ICompass[]
-}
 
 function Sheet() {
-    const [ music, setMusic] = useState({
-        name: 'Sonata nº9',
-        tempo: [4, 4],
-        compasses: getCompasses()
-    } as Music)
+    const [ compasses, setCompasses] = useState([
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+    ])
     
 
     return (
       <div className="px-10">
         <SheetMusic>
             {
-                music.compasses.map((value, index) => {
-                    if (index % 4 === 0){
-                        return (
-                            <SheetLine key={index}>
-                                
-                                <Compass
-                                    index={index}
-                                    notes={value?.notes}
-                                />
-                                <Compass
-                                    index={index}
-                                    notes={value?.notes}
-                                />
-                                <Compass
-                                    index={index}
-                                    notes={value?.notes}
-                                />
-                                <Compass
-                                    index={index}
-                                    notes={value?.notes}
-                                />
-                            </SheetLine>
-                        )
-                    }
+                compasses.map((value, index) => {
+                    return <Compass
+                        key={index}
+                        index={index}
+                    />
                 })
             }
         </SheetMusic>
